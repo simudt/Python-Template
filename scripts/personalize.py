@@ -5,6 +5,8 @@ it for own project.
 This script is interactive and will prompt you for various inputs.
 """
 
+from __future__ import annotations
+
 import sys
 from pathlib import Path
 from typing import Generator, List, Tuple
@@ -157,7 +159,7 @@ def iterfiles(dir: Path) -> Generator[Path, None, None]:
             yield path
 
 
-def personalize_file(path: Path, dry_run: bool, replacements: List[Tuple[str, str]]):
+def personalize_file(path: Path, dry_run: bool, replacements: list[tuple[str, str]]):
     with path.open(mode="r+t", encoding="utf-8") as file:
         filedata = file.read()
 
